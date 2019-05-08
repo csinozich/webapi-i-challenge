@@ -34,7 +34,7 @@ server.get('/api/users/:id', (req, res) => {
 server.post('/api/users', (req, res) => {
   const { name, bio, created_at, updated_at } = req.body;
   if(!name || !bio) {
-    res.status(400).json({ error: "Please provide name and bio for user.""})
+    res.status(400).json({ error: "Please provide name and bio for user."})
   }
   else {
     db.insert({ name, bio, created_at, updated_at })
